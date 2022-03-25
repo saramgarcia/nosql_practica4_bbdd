@@ -2,7 +2,8 @@
 const Patient = require('../models/patient');
 
 exports.list = async function() {
-    // Rellene aqui ...
+    let result = await Patient.findAll();
+    return result;
 }
 
 exports.read = async function(patientId) {
@@ -18,11 +19,13 @@ exports.update= async function(patientId, body) {
 }
 
 exports.delete = async function(patientId) {
-    // Rellene aqui ...
+    let result = async Patient.findOneAndDelete(patientId);
+    return result;
 }
 
 exports.filterPatientsByCity = async function (city) {
-    // Rellene aqui ...
+    let result = await Patient.find({city});
+    return result;
 }
 
 exports.filterPatientsByDiagnosis = async function (diagnosis) {
