@@ -29,7 +29,8 @@ exports.filterPatientsByCity = async function (city) {
 }
 
 exports.filterPatientsByDiagnosis = async function (diagnosis) {
-    // Rellene aqui ...
+    let result = await Patient.find {"medicalHistory.diagnosis:diagnosis"});
+    return result;
 }
 
 exports.filterPatientsBySpeacialistAndDate = async function (specialist, sDate,fDate) {
